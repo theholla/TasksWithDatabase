@@ -1,0 +1,19 @@
+<h2 class="well">Your Task List</h2>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Task Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		#foreach ($task in $tasks)
+		<tr>
+			<td><a href="/tasks/$task.getId()">$task.getDescription()</a></td>
+		</tr>
+		#end>
+	</tbody>
+</table>
+<form action="/tasks/new">
+	<button type="submit" class="btn btn-success">Add New Task</button>
+</form>

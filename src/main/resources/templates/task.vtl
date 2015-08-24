@@ -1,0 +1,20 @@
+#if ($task)
+	<h2 class="well">$task.getDescription()</h2>
+#else
+	<h5>Task not found</h5>
+#end
+
+<table>
+  <tr>
+    <td>
+	  <form action="/tasks/new">
+		<button type="submit" id="btnAddSubmit" class="btn btn-success">Add Another Task</button>
+	  </form>
+	</td>
+	<td>
+	  <form action="/tasks">
+		<button type="submit" id="btnViewTasks" class="btn">View Tasks</button>
+	  </form>
+	</td>
+  </tr>
+</table>
