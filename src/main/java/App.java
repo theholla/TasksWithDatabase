@@ -68,9 +68,6 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-
-    /////////////////////////////////////
-
     get("/categories", (request,response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       model.put("categories", Category.all());
@@ -97,11 +94,13 @@ public class App {
 
     post("/categories", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      String description = request.queryParams("description");
-      // Category newCategory = new Category(description);
-      response.redirect("/categories");
-      return null;
-    });
+      String description = request.queryParams("name");
+      Category category = new Category(description);
+      category.save();
+      model.put("categories", Category.all());
+      model.put("template", "templates/categories.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
     // put("/categories/:id", (request, response) -> {
     //   HashMap<String, Object> model = new HashMap<String, Object>();
