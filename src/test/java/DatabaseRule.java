@@ -7,10 +7,12 @@ public class DatabaseRule extends ExternalResource {
     DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/to_do_test", "me", "root");
    }
 
-  protected void after() {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "DELETE FROM tasks *;";
-      con.createQuery(sql).executeUpdate();
-    }
-  }
+   protected void after() {
+       try(Connection con = DB.sql2o.open()) {
+         String deleteTasksQuery = "DELETE FROM tasks *;";
+         String deleteCategoryQuery = "DELETE FROM categories *;";
+         con.createQuery(deleteTasksQuery).executeUpdate();
+         con.createQuery(deleteCategoryQuery).executeUpdate();
+       }
+   }
 }
