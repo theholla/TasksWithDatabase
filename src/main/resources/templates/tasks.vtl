@@ -1,6 +1,5 @@
-<h2>Manage Your Tasks</h2>
+<h2 class="well">Tasks</h2>
 
-		<a href="/categories">View Category List</a>
-
-
-		<a href="/categories/new">Add a New Category</a>
+#foreach ($task in $tasks)
+	<h3><a href="/tasks/$task.getId()">$task.getName()</a></h3>
+#end

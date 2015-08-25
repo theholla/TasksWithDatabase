@@ -1,6 +1,6 @@
-<h1>Add a task to this category:</h1>
+<h1 class="well">Add a task to this category</h1>
 
-<form action="/tasks" method="post">
+<form action="/task" method="post">
 	<input id="categoryId" name="categoryId" type="hidden" value="$category.getId()">
 
 	<div class="form-group">
@@ -9,4 +9,6 @@
 	</div>
 
 	<button type="submit" class="btn btn-success">Add</button>
+	<a href="/tasks/new">Add Another Task</a>
+
 </form>
