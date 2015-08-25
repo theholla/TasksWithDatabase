@@ -39,7 +39,7 @@ public class Task {
 
 
 	public static List<Task> all() {
-		String sql = "SELECT id, description, categoryId FROM Tasks";
+		String sql = "SELECT id, description, categoryId FROM tasks";
 		try(Connection con = DB.sql2o.open()) {
 			return con.createQuery(sql).executeAndFetch(Task.class);
 		}

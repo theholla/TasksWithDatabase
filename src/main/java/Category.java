@@ -52,7 +52,9 @@ public class Category {
 				.addParameter("id", id)
 				.executeAndFetchFirst(Category.class);
 			return Category;
-		}
+		} catch (IndexOutOfBoundsException exception) {
+      return null;
+    }
 	}
 
 	public List<Task> getTasks() {

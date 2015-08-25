@@ -23,17 +23,25 @@ public class IntegrationTest extends FluentTest {
   	assertThat(pageSource()).contains("Manage Your Tasks");
   }
 
-  // @Test
-  // public void categoryIsCreatedAndDisplayedTest() {
-  // 	goTo("http://localhost:4567/");
-  //   click("button", withText("Add a New Category"));
-  // 	fill("#name").with("fun");
-  // 	submit(".btn");
-  // 	assertThat(pageSource()).contains("Categories");
-  // }
+  @Test
+  public void categoryIsCreatedAndDisplayedTest() {
+  	goTo("http://localhost:4567/");
+    click("a", withText("Add a New Category"));
+  	fill("#name").with("fun");
+  	submit(".btn");
+  	assertThat(pageSource()).contains("Categories");
+  }
 
   // @Test
   // public void taskIScreatedTest(){
-  // goTo("");
+  // goTo("http://localhost:4567/");
+  // click("a", withText("Add a New Category"));
+  // fill("#name").with("fun");
+  // submit(".btn");
+  // click("a", withText("fun"));
+  // click("a", withText("Add another task to fun"));
+  // fill("#description").with("cool stuff");
+  // submit(".btn");
+  // assertThat(pageSource()).contains("cool stuff");
   // }
 }
