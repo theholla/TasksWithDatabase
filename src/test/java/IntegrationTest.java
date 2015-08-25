@@ -2,6 +2,7 @@ import org.fluentlenium.adapter.FluentTest;
 import java.util.ArrayList;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.fluentlenium.core.filter.FilterConstructor.*;
@@ -16,6 +17,9 @@ public class IntegrationTest extends FluentTest {
 
   @ClassRule
   public static ServerRule server = new ServerRule();
+
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
 
   @Test
   public void rootTest() {
@@ -32,16 +36,17 @@ public class IntegrationTest extends FluentTest {
   	assertThat(pageSource()).contains("Categories");
   }
 
-  // @Test
-  // public void taskIScreatedTest(){
-  // goTo("http://localhost:4567/");
-  // click("a", withText("Add a New Category"));
-  // fill("#name").with("fun");
-  // submit(".btn");
-  // click("a", withText("fun"));
-  // click("a", withText("Add another task to fun"));
-  // fill("#description").with("cool stuff");
-  // submit(".btn");
-  // assertThat(pageSource()).contains("cool stuff");
-  // }
+  @Test
+  public void taskIScreatedTest(){
+    goTo("http://localhost:4567/");
+    click("a", withText("Add a New Category"));
+    fill("#name").with("fun");
+    submit(".btn");
+    System.out.println(pageSource());
+    click("a", withText("fun"));
+    click("a", withText("Add another task to fun"));
+    fill("#description").with("cool stuff");
+    submit(".btn");
+    assertThat(pageSource()).contains("cool stuff");
+  }
 }
