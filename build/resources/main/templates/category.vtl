@@ -1,11 +1,11 @@
 <h2 class="well">$category.getName()</h2>
-<h6>Here are all of the tasks in this category:</h6>
+<h3>Here are all of the tasks in this category:</h3>
 
+<ol>
 	#foreach ($task in $category.getTasks())
-			$task.getDescription()
+			<li><h3>$task.getDescription()</h3></li>
 	#end
+</ol>
 
-<form action="/category/$category.getId()/tasks/new" id="addTask">
-		<a href="/tasks/new">Add Another Task</a>
-
+		<a href="/categories/$category.getId()/tasks/new">Add Another Task</a>
 		<a href="/">home</a>

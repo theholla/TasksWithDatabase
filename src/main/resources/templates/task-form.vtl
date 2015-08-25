@@ -1,14 +1,12 @@
-<h1 class="well">Add a task to this category</h1>
+<h1 class="well">Add a task to $category.getName()</h1>
 
-<form action="/task" method="post">
-	<input id="categoryId" name="categoryId" type="hidden" value="$category.getId()">
+<form action="/tasks" method="post">
 
-	<div class="form-group">
+		<input id="categoryId" name="categoryId" type="hidden" value="$category.getId()">
+
 		<label for="description">Task Description</label>
 		<input id="description" name="description" type="text" class="form-control">
-	</div>
-
-	<button type="submit" class="btn btn-success">Add</button>
-	<a href="/tasks/new">Add Another Task</a>
-
+		<button type="submit" class="btn btn-success">Add</button>
 </form>
+
+<a href="/categories/$category.getId()/tasks/new">Add Another Task</a>

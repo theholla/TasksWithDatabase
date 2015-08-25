@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CategoryTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2015-08-25T01:39:51" hostname="epicodus-104.local" time="0.062">
+<testsuite name="CategoryTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2015-08-25T19:26:19" hostname="epicodus-111.local" time="0.064">
   <properties/>
-  <testcase name="all_emptyAtFirst" classname="CategoryTest" time="0.062">
+  <testcase name="all_emptyAtFirst" classname="CategoryTest" time="0.064">
     <failure message="org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: role &quot;me&quot; does not exist" type="org.sql2o.Sql2oException">org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: role &quot;me&quot; does not exist
 	at org.sql2o.Connection.createConnection(Connection.java:291)
 	at org.sql2o.Connection.&lt;init&gt;(Connection.java:51)

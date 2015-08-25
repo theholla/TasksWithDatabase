@@ -24,45 +24,16 @@ public class IntegrationTest extends FluentTest {
   }
 
   // @Test
-  // public void taskIsCreatedTest() {
+  // public void categoryIsCreatedAndDisplayedTest() {
   // 	goTo("http://localhost:4567/");
-  //   click("button", withText("Add Task"));
-  // 	fill("#description").with("Mow the lawn");
+  //   click("button", withText("Add a New Category"));
+  // 	fill("#name").with("fun");
   // 	submit(".btn");
-  // 	assertThat(pageSource()).contains("Your task has been saved.");
+  // 	assertThat(pageSource()).contains("Categories");
   // }
 
   // @Test
-  // public void taskIsDisplayedTest() {
-  // 	goTo("http://localhost:4567/");
-  //   click("button", withText("Add Task"));
-  // 	fill("#description").with("Mow the lawn");
-  // 	submit(".btn");
-  // 	click("button", withText("Go Back"));
-  //   click("button", withText("View Tasks"));
-  // 	assertThat(pageSource()).contains("Mow the lawn");
+  // public void taskIScreatedTest(){
+  // goTo("");
   // }
-
-  // @Test
-  // public void multipleTasksAreDisplayedTest() {
-  // 	goTo("http://localhost:4567/");
-  //   click("button", withText("Add Task"));
-  // 	fill("#description").with("Mow the lawn");
-  // 	submit(".btn");
-  // 	click("button", withText("Go Back"));
-  //   click("button", withText("Add Task"));
-  // 	fill("#description").with("Buy groceries");
-  // 	submit(".btn");
-  // 	click("button", withText("Go Back"));
-  //   click("button", withText("View Tasks"));
-  // 	assertThat(pageSource()).contains("Mow the lawn");
-  // 	assertThat(pageSource()).contains("Buy groceries");
-  // }
-
-  // @Test
-  // public void wasNotFoundMessageShown() {
-  //   goTo("http://localhost:4567/tasks/999");
-  //   assertThat(pageSource()).contains("Task not found");
-  // }
-
 }
