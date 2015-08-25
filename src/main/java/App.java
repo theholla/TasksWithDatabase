@@ -72,10 +72,6 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-
-///
-
-
     get("/categories", (request,response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       model.put("categories", Category.all());
