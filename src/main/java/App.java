@@ -38,14 +38,18 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/tasks", (request, response) -> {
+    post("/categories/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       Category thisCategory = Category.find(Integer.parseInt(request.queryParams("categoryId")));
+      int id = Integer.parseInt(request.params("id"));
+      Category category = Category.find(id);
+      model.put("category", category);
+
       String description = request.queryParams("description");
       Task newTask = new Task(description, thisCategory.getId());
       newTask.save();
       model.put("tasks", Task.all());
-      model.put("template", "templates/tasks.vtl");
+      model.put("template", "templates/category.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
